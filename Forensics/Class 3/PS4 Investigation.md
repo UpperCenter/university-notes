@@ -43,11 +43,17 @@ Firmware information:
 - Based on: FreeBSD 9.0
 - Platform: 64 bits (x86_64)
 
+<!-- pagebreak -->
+
+\pagebreak 
+
 ## Obtaining Data
 
 * All data is encrypted, making it nearly impossible to obtain any data through external means
 * The most common method attempted is to record running the PS4 as usual and looking for data that way, but this doesn't often yield results
 * Not much info is known about the PS4's file system layout as the user is sandboxed into their own partition
+
+\pagebreak
 
 ### Partition Format
 
