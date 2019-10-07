@@ -5,9 +5,10 @@
   - [Hard Drive Information](#hard-drive-information)
   - [Types of Data Stored](#types-of-data-stored)
     - [File Structure](#file-structure)
+  - [Obtaining Data](#obtaining-data)
     - [Partition Format](#partition-format)
   - [RAM Configuration](#ram-configuration)
-  - [Blu-Ray Drive](#blu-ray-drive)
+  - [Blu-Ray Disks](#blu-ray-disks)
     - [File Structure:](#file-structure)
   - [External Storage](#external-storage)
     - [External File Structure](#external-file-structure)
@@ -42,26 +43,31 @@ Firmware information:
 - Based on: FreeBSD 9.0
 - Platform: 64 bits (x86_64)
 
+## Obtaining Data
+
+* All data is encrypted, making it nearly impossible to obtain any data through external means
+* The most common method attempted is to record running the PS4 as usual and looking for data that way, but this doesn't often yield results
+* Not much info is known about the PS4's file system layout as the user is sandboxed into their own partition
 
 ### Partition Format
 
-| No | Device File | Z5K500 size | ST500LM012 size   | in bytes        | type                                   |
-|:---|:-----------:|------------:|------------------:|----------------:|----------------------------------------|
-| 1  | /dev/sdc17  | 1 GiB       | 1 GiB             | 1,073,741,824   | `80dd49e3-a985-4887-81de-1daca47aed90` |
-| 2  | /dev/sdc31  | 16 GiB      | 16 GiB            | 17,179,869,184  | `3ef7290a-de81-4887-a11f-46fba765c71c` |
-| 3  | /dev/sdc27  | 420.12 GiB  | 420.120117188 GiB | 451,100,540,928 | `c638477a-e002-4b57-a454-a27fb63a33a8` |
-| 4  | /dev/sdc13  | 8 GiB       | 8 GiB             | 8,589,934,592   | `76a9a5b4-44b0-472a-bde3-3107472adee2` |
-| 5  | /dev/sdc9   | 1 GiB       | 1 GiB             | 1,073,741,824   | `757a614b-6179-5361-6b61-6b6968617261` |
-| 6  | /dev/sdc10  | 1 GiB       | 1 GiB             | 1,073,741,824   | `757a614b-6179-5361-6b61-6b6968617261` |
-| 7  | /dev/sdc11  | 1 GiB       | 1 GiB             | 1,073,741,824   | `dc85025f-a694-4109-be44-fa0c063e8b81` |
-| 8  | /dev/sdc12  | 1 GiB       | 1 GiB             | 1,073,741,824   | `dc85025f-a694-4109-be44-fa0c063e8b81` |
-| 9  | /dev/sdc19  | 8 GiB       | 8 GiB             | 8,589,924,592   | `a71ff62d-1421-4dd9-935d-25dabd81bec5` |
-| A  | /dev/sdc1   | 512 MiB     | 512 MiB           | 536,780,912     | `17800f17-b9e1-425d-b937-0119a0813172` |
-| B  | /dev/sdc3   | 1 GiB       | 1 GiB             | 1,073,741,824   | `ccb52e94-ebef-48c4-a195-9e2da5b0292c` |
-| C  | /dev/sdc5   | 16 MiB      | 16 MiB            | 16,777,216      | `145268bf-63ad-47c1-9378-9aacd9beed7c` |
-| D  | /dev/sdc7   | 128 MiB     | 128 MiB           | 134,217,728     | `6e0c5310-8445-4066-b571-9b65fdb75935` |
-| E  | /dev/sdc29  | 1 GiB       | 1 GiB             | 1,073,741,824   | `21e4dfb4-0040-4934-a037-ea9dc058eea6` |
-| F  | /dev/sdc25  | 6 GiB       | 6 GiB             | 6,442,450,944   | `fdb5ede1-73c3-4c43-8c5b-2d3dcfcddff8` |
+| No | Device File | Z5K500 size | ST500LM012 size   | in bytes        | type                                   | remarks |
+|:---|:-----------:|------------:|------------------:|----------------:|----------------------------------------|---------|
+| 1  | /dev/sdc17  | 1 GiB       | 1 GiB             | 1,073,741,824   | `80dd49e3-a985-4887-81de-1daca47aed90` |         |
+| 2  | /dev/sdc31  | 16 GiB      | 16 GiB            | 17,179,869,184  | `3ef7290a-de81-4887-a11f-46fba765c71c` |         |
+| 3  | /dev/sdc27  | 420.12 GiB  | 420.120117188 GiB | 451,100,540,928 | `c638477a-e002-4b57-a454-a27fb63a33a8` | user    |
+| 4  | /dev/sdc13  | 8 GiB       | 8 GiB             | 8,589,934,592   | `76a9a5b4-44b0-472a-bde3-3107472adee2` |         |
+| 5  | /dev/sdc9   | 1 GiB       | 1 GiB             | 1,073,741,824   | `757a614b-6179-5361-6b61-6b6968617261` |         |
+| 6  | /dev/sdc10  | 1 GiB       | 1 GiB             | 1,073,741,824   | `757a614b-6179-5361-6b61-6b6968617261` |         |
+| 7  | /dev/sdc11  | 1 GiB       | 1 GiB             | 1,073,741,824   | `dc85025f-a694-4109-be44-fa0c063e8b81` |         |
+| 8  | /dev/sdc12  | 1 GiB       | 1 GiB             | 1,073,741,824   | `dc85025f-a694-4109-be44-fa0c063e8b81` |         |
+| 9  | /dev/sdc19  | 8 GiB       | 8 GiB             | 8,589,924,592   | `a71ff62d-1421-4dd9-935d-25dabd81bec5` |         |
+| A  | /dev/sdc1   | 512 MiB     | 512 MiB           | 536,780,912     | `17800f17-b9e1-425d-b937-0119a0813172` |         |
+| B  | /dev/sdc3   | 1 GiB       | 1 GiB             | 1,073,741,824   | `ccb52e94-ebef-48c4-a195-9e2da5b0292c` |         |
+| C  | /dev/sdc5   | 16 MiB      | 16 MiB            | 16,777,216      | `145268bf-63ad-47c1-9378-9aacd9beed7c` |         |
+| D  | /dev/sdc7   | 128 MiB     | 128 MiB           | 134,217,728     | `6e0c5310-8445-4066-b571-9b65fdb75935` | eap_vsh |
+| E  | /dev/sdc29  | 1 GiB       | 1 GiB             | 1,073,741,824   | `21e4dfb4-0040-4934-a037-ea9dc058eea6` |         |
+| F  | /dev/sdc25  | 6 GiB       | 6 GiB             | 6,442,450,944   | `fdb5ede1-73c3-4c43-8c5b-2d3dcfcddff8` | update  |
 
 
 ## RAM Configuration
@@ -78,7 +84,7 @@ Firmware information:
 | Bandwidth (Gbit/s):                                               | 176           |
 | System Reserved / Application+Game Free (GB) / Flexible Memory:   | 2.5 / 4.5 / 1 |
 
-## Blu-Ray Drive
+## Blu-Ray Disks
 
 ### File Structure:
 
